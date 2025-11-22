@@ -1,4 +1,4 @@
-img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dio.me%2Farticles%2Fvantagens-da-utilizacao-da-aws&psig=AOvVaw1wCgeqnamSQUrtF-TAiyEj&ust=1763912597226000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjZ2c-MhpEDFQAAAAAdAAAAABAK" width="largura"
+<img src="E:\projetos\lab-aws-sagemaker-canvas-estoque\resources\images.jpg" width="80" height="80">
 
 📌 1. Visão Geral do Projeto
 
