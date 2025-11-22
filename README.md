@@ -1,47 +1,240 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
+img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dio.me%2Farticles%2Fvantagens-da-utilizacao-da-aws&psig=AOvVaw1wCgeqnamSQUrtF-TAiyEj&ust=1763912597226000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjZ2c-MhpEDFQAAAAAdAAAAABAK" width="largura"
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
+📌 1. Visão Geral do Projeto
 
-## 📋 Pré-requisitos
+Este projeto foi desenvolvido como parte do desafio da DIO: “Previsão de Estoque Inteligente na AWS com SageMaker Canvas”.
+O objetivo é utilizar Machine Learning no-code para criar um sistema que preveja a demanda futura de produtos, ajudando negócios a tomarem decisões mais estratégicas sobre estoque, compras e reposições.
 
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
+Para tornar o desafio mais realista e prático, optei por simular o estoque de um E-commerce de Restaurante, pois esse cenário apresenta um alto volume de vendas, variações sazonais e grande impacto de promoções e feriados — condições ideais para demonstrar o poder de predição do SageMaker Canvas.
+
+🍽️ 2. Por que escolher um E-commerce de Restaurante?
+
+A escolha desse tipo de negócio foi estratégica:
+
+✔ Permite análises ricas e visualmente interessantes
+
+✔ Simular dados é simples e natural (vendas, promoções, feriados)
+
+✔ Ideal para mostrar insights relevantes que um restaurante realmente usaria
+
+✔ Combina alta variabilidade → excelente para treinar modelos de ML
+
+✔ Fica incrível visualmente no relatório final, no Canvas e no GitHub
+
+Com esse tipo de dataset, podemos demonstrar o que empresas reais fazem para:
+
+prever demanda,
+
+ajustar estoque,
+
+evitar rupturas,
+
+otimizar compras,
+
+planejar promoções,
+
+antecipar picos.
+
+📊 3. Criação e Seleção do Dataset
+
+Com a ajuda do ChatGPT, defini o escopo do dataset e gerei um arquivo CSV com:
+
+✔ 5 produtos diferentes
+
+✔ 600 linhas simuladas
+
+✔ Preço, promoção, estoque, reposição
+
+✔ Tendência online
+
+✔ Fim de semana
+
+✔ Feriados (impactam fortemente as vendas)
+
+Esse arquivo foi salvo na pasta datasets do repositório.
+
+O dataset contém colunas realistas e perfeitas para modelos de time series forecasting, incluindo vendas_dia, que é a variável alvo.
+
+🛠️ 4. Construir e Treinar o Modelo no SageMaker Canvas
+
+Após importar o dataset no SageMaker Canvas:
+
+o Canvas automaticamente identificou padrões importantes,
+
+gerou gráficos de comportamento de vendas,
+
+mostrou tendência semanal,
+
+analisou impacto de feriados,
+
+mostrou preços, promoções e variações diárias.
+
+🎯 Coluna Alvo (Target):
+
+vendas_dia
+A escolha dessa coluna permite prever:
+
+vendas de amanhã,
+
+dos próximos 7 dias,
+
+dos próximos 30 dias.
+
+Essas previsões permitem:
+
+prever ruptura de estoque,
+
+planejar reposições,
+
+ajustar compras,
+
+reduzir custos,
+
+estimar faturamento futuro.
+
+⚡ 5. Treinando Dois Modelos: Quick Build vs Standard Build
+
+Para fins de comparação, treinei dois modelos:
+
+🚀 Quick Build
+
+Treinamento mais rápido
+
+Menos camadas de análise
+
+Menor custo computacional
+
+Ideal para testes iniciais
+
+🧩 Standard Build
+
+Mais robusto
+
+Testa mais algoritmos
+
+Avaliação mais profunda
+
+Resultados mais estáveis
+
+Melhor desempenho geral
+
+Ambos os modelos retornaram métricas importantes que avaliam a qualidade das previsões.
+
+📐 6. Interpretação das Métricas do Modelo
+
+Aqui está a explicação clara e prática de cada métrica retornada pelo Canvas:
+
+🔍 1. Avg. wQL — Weighted Quantile Loss
+
+Essa métrica é usada para avaliar previsões de séries temporais baseadas em quantis (p50, p90 etc.).
+
+Como interpretar:
+
+< 0.20 → Excelente
+
+Quanto menor → melhor
+
+Essa métrica considera a incerteza do futuro, por isso é muito usada pela AWS.
+
+🔍 2. MAPE — Mean Absolute Percentage Error
+
+Mede o erro percentual médio do modelo.
+
+Como interpretar:
+
+< 10% → nível profissional
+
+10–20% → muito bom
+
+20–30% → aceitável
+
+30% → fraco
+
+🔍 3. WAPE — Weighted Absolute Percentage Error
+
+Versão mais estável do MAPE, pois leva em conta o volume de vendas.
+
+Como interpretar:
+
+0.20–0.30 → modelo bom e consistente
+
+Quanto menor → melhor
+
+🔍 4. RMSE — Root Mean Squared Error
+
+Erro médio em unidades reais (quantas unidades o modelo erra, em média).
+
+É muito útil para entender o impacto na operação:
+
+RMSE de 11 significa que o modelo erra cerca de 11 unidades para cima ou para baixo.
+
+🔍 5. MASE — Mean Absolute Scaled Error
+
+Compara seu modelo com um modelo "ingênuo" ("amanhã = hoje").
+
+Como interpretar:
+
+< 1.0 → modelo melhor que o naive
+
+= 1.0 → igual
+
+1.0 → pior
+
+É uma das métricas mais importantes para séries temporais reais.
+
+📌 7. Insights Obtidos no Canvas
+
+Durante a análise, o SageMaker identificou colunas com maior impacto na previsão:
+
+preco_dia — elasticidade de preço
+
+tendencia_online_idx — comportamento digital
+
+estoque_inicial / estoque_final — risco de ruptura
+
+dia_semana — sazonalidade semanal
+
+feriado — forte impacto em vendas
+
+promocao / desconto_pct — aumento significativo de demanda
+
+Esses insights permitem que empresas tomem decisões mais inteligentes sobre:
+
+compras,
+
+preços,
+
+promoções,
+
+gestão de estoque,
+
+planejamento de demanda.
+
+🎯 8. Conclusão
+
+Este projeto demonstra como, mesmo sem código, é possível construir um modelo de previsão robusto utilizando o AWS SageMaker Canvas.
+
+Combinando:
+
+um dataset bem projetado,
+
+engenharia de features realista,
+
+análise de impacto,
+
+e comparação entre dois tipos de modelos,
+
+foi possível criar um sistema inteligente capaz de prever vendas e otimizar estoque de forma simples e profissional.
+
+Esse projeto pode ser expandido com:
+
+gráficos avançados,
+
+testes com novos produtos,
+
+integração com dashboards,
+
+criação de APIs via AWS Lambda + API Gateway.
 
 
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
 
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
-
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
-
-
-## 🚀 Passo a Passo
-
-### 1. Selecionar Dataset
-
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
-
-### 2. Construir/Treinar
-
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
-
-### 3. Analisar
-
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
-
-### 4. Prever
-
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
