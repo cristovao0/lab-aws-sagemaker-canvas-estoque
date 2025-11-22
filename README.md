@@ -58,6 +58,7 @@ O dataset contém colunas realistas e perfeitas para modelos de time series fore
 🛠️ 4. Construir e Treinar o Modelo no SageMaker Canvas
 
 Após importar o dataset no SageMaker Canvas:
+<img src="https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/criando o modelo 1.png" width="1920" height="1080">
 
 o Canvas automaticamente identificou padrões importantes,
 
