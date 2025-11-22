@@ -58,7 +58,7 @@ O dataset contém colunas realistas e perfeitas para modelos de time series fore
 🛠️ 4. Construir e Treinar o Modelo no SageMaker Canvas
 
 Após importar o dataset no SageMaker Canvas:
-<img src="https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/criando o modelo 1.png" width="1920" height="1080">
+<img src="https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/Criando%20o%20modelo%201.png" width="1920" height="1080">
 
 o Canvas automaticamente identificou padrões importantes,
 
@@ -71,7 +71,7 @@ analisou impacto de feriados,
 mostrou preços, promoções e variações diárias.
 
 🎯 Coluna Alvo (Target):
-
+<img src="https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/modelo%20configurado.png" width="1920" height="1080">
 vendas_dia
 A escolha dessa coluna permite prever:
 
@@ -98,6 +98,7 @@ estimar faturamento futuro.
 Para fins de comparação, treinei dois modelos:
 
 🚀 Quick Build
+<img src="(https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/modelo%20quickbuild.png)" width="1920" height="1080">
 
 Treinamento mais rápido
 
@@ -106,6 +107,8 @@ Menos camadas de análise
 Menor custo computacional
 
 Ideal para testes iniciais
+
+<strong>PS: Não irei conseguir fazer as comparações dos modelos pois enquanto gerava o modelo standart todos os meus créditos gratis foram consumidos</strong>, mas deixarei aqui um resumo do que o pesquisei sobre a Stadart Build
 
 🧩 Standard Build
 
