@@ -98,7 +98,7 @@ estimar faturamento futuro.
 Para fins de comparação, treinei dois modelos:
 
 🚀 Quick Build
-<img src="(https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/modelo%20quickbuild.png)" width="1920" height="1080">
+<img src="https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/blob/main/resources/modelo%20quickbuild.png" width="1920" height="1080">
 
 Treinamento mais rápido
 
