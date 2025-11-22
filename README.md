@@ -1,4 +1,4 @@
-<img src="E:\projetos\lab-aws-sagemaker-canvas-estoque\resources\images.jpg" width="80" height="80">
+<img src="https://github.com/cristovao0/lab-aws-sagemaker-canvas-estoque/tree/main/resources/images.jpg" width="160" height="160">
 
 📌 1. Visão Geral do Projeto
 
